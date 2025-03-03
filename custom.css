@@ -1,0 +1,208 @@
+:root {
+  --custom-primary: #5f7adb;
+  --custom-secondary: #a2b2ee;
+  --custom-accent: #7b8cdd;
+  --custom-text: #26292b;
+  --custom-light-bg: #ffffff;
+  --custom-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --custom-transition: all 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.browser-tab:focus {
+  outline: 2px solid var(--custom-primary);
+  outline-offset: 2px;
+}
+
+.browser-tab {
+  background: var(--custom-light-bg);
+  color: var(--custom-text);
+  transition: var(--custom-transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.browser-tab:hover {
+  background: var(--custom-secondary);
+  color: var(--custom-text);
+  transform: translateY(-1px);
+}
+
+.browser-tab.active {
+  background: var(--custom-primary);
+  color: white;
+  box-shadow: var(--custom-shadow);
+}
+
+.browser-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 3px;
+  background: var(--custom-accent);
+  border-radius: 3px 3px 0 0;
+}
+
+@media (max-width: 768px) {
+  #four.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.step-title {
+  color: var(--custom-primary);
+  border-bottom: 2px solid var(--custom-primary);
+}
+
+.custom-card-title {
+  color: var(--custom-primary);
+}
+
+.icon-list li i {
+  color: var(--custom-primary);
+  width: 25px;
+}
+
+.faq-item {
+  height: 180px;
+}
+
+.step-description .custom-card {
+  height: 240px;
+}
+
+@media (max-width: 380px) {
+  .faq-item {
+    height: 200px;
+  }
+
+  .step-description .custom-card {
+    height: 280px;
+  }
+
+  .order-button {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .faq-item {
+    height: 230px;
+  }
+
+  .step-description .custom-card {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fs-7 {
+    font-size: 0.9rem;
+  }
+
+  .fs-8 {
+    font-size: 0.8rem;
+  }
+
+  .card-service-item .custom-card-text {
+    font-size: 0.8rem;
+    text-align: center;
+    list-style-type: none;
+  }
+
+  .card-service-button {
+    font-size: 0.7rem;
+  }
+
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  transition: var(--custom-transition);
+}
+
+.faq-item h3 {
+  color: var(--custom-primary);
+}
+
+.faq-item p,
+.step-description .custom-card p {
+  color: var(--custom-text);
+  font-size: 0.9rem;
+}
+
+.custom-alert-info {
+  background-color: var(--custom-secondary);
+  border-color: var(--custom-secondary);
+  color: var(--custom-text);
+}
+
+.fs-7 {
+  font-size: 1rem;
+}
+
+.fs-8 {
+  font-size: 0.9rem;
+}
+
+.fs-ultra {
+  font-size: 3rem;
+}
+
+.w-85 {
+  width: 85%;
+}
+
+.card-service-item {
+  height: 450px;
+  perspective: 1000px;
+}
+
+.card-service-item:hover {
+  transform: none;
+}
+
+.card-service-item .custom-card-img-top {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.card-service-button:hover {
+  transform: translateY(-3px);
+  transition: var(--custom-transition);
+}
+
+.card-inner {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-service-item.is-flipped .card-inner,
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+}
